@@ -95,3 +95,10 @@ from guests g
 left join bookings b on g.guest_id = b. guest_id
 where b.booking_id is null;
 
+-- cau 3
+select r.room_type,r.price_per_day,count(b.booking_id)
+from rooms r
+left join bookings b on r.room_id = b.room_id
+group by r.room_id, r.room_type, r.price_per_day
+order by count(b.booking_id) desc
+limit 1;

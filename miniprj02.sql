@@ -77,6 +77,10 @@ group by room_type;
 
 -- PHAN 2
 -- cau 1
+select g.guest_name ,r.room_type ,b.check_in 
+from bookings b
+join guests g on b.guest_id = g.guest_id
+join rooms r on b.room_id = r.room_id;
 
 
 -- PHAN 3
